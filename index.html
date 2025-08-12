@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DemoTube — No-login Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">DT</div>
+      <div>
+        <h1>DemoTube</h1>
+        <div class="small">No-login demo • Local-only uploads</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input class="search" id="search" placeholder="Search videos..." />
+      <label class="btn" for="fileInput">Upload</label>
+      <input id="fileInput" type="file" accept="video/*" multiple style="display:none" />
+      <button class="btn primary" id="newUpload">New Upload</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="uploader">
+      <div id="dropZone" class="drop">Drop videos here or click Upload</div>
+    </div>
+
+    <section>
+      <div id="videoGrid" class="video-grid">
+        <!-- video cards injected here -->
+      </div>
+    </section>
+  </main>
+
+  <div id="overlay" class="overlay">
+    <div class="player" role="dialog">
+      <button id="closePlayer" class="btn" style="float:right;margin-bottom:8px">Close</button>
+      <video id="playerVideo" controls></video>
+      <div class="info">
+        <div>
+          <div id="playerTitle" style="font-weight:700"></div>
+          <div id="playerFilename" class="small"></div>
+        </div>
+        <div>
+          <button id="deleteBtn" class="btn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Demo project — not for hosting illegal content. Videos are stored only in your browser (IndexedDB).
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
